@@ -77,6 +77,48 @@ a:hover { color: var(--color-red); }
 
 img { max-width: 100%; height: auto; border-radius: 12px; border: var(--border-width) solid var(--border); }
 
+.post-content h1, .post-content h2, .post-content h3,
+.post-content h4, .post-content h5, .post-content h6 {
+	font-family: var(--font-display);
+	text-transform: uppercase;
+	letter-spacing: .01em;
+	line-height: 1.15;
+	color: var(--color-purple);
+	margin: 2rem 0 .75rem;
+}
+.post-content h1 { font-size: 1.7rem; color: var(--color-red); }
+.post-content h2 { font-size: 1.4rem; }
+.post-content h3 { font-size: 1.15rem; color: var(--color-teal); }
+.post-content h4, .post-content h5, .post-content h6 {
+	font-family: var(--font-body);
+	font-weight: 700;
+	text-transform: none;
+	font-size: 1rem;
+	color: var(--text);
+}
+.post-content > :first-child { margin-top: 0; }
+
+.post-content table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 1.5rem 0;
+	font-size: .92rem;
+}
+.post-content th, .post-content td {
+	border: 2px solid var(--border);
+	padding: .5rem .75rem;
+	text-align: left;
+}
+.post-content th {
+	font-family: var(--font-display);
+	text-transform: uppercase;
+	letter-spacing: .01em;
+	font-size: .8rem;
+	background: var(--color-yellow);
+	color: var(--text);
+}
+.post-content tr:nth-child(even) td { background: var(--bg); }
+
 hr {
 	border: none;
 	height: 5px;
