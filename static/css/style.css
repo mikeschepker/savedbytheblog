@@ -11,6 +11,7 @@
 	--color-purple: #7b2ff7;
 	--color-teal: #00c9c8;
 	--color-yellow: #ffd23f;
+	--color-blue: #1f3fd6;
 
 	/* semantic tokens — these flip for dark mode below */
 	--bg: #fff8ec;
@@ -105,10 +106,10 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	text-align: center;
 	padding: 3rem 1.25rem 2.5rem;
 	overflow: hidden;
-	background: repeating-linear-gradient(135deg,
-		var(--color-red) 0 40px, var(--color-pink) 40px 80px,
-		var(--color-purple) 80px 120px, var(--color-teal) 120px 160px,
-		var(--color-yellow) 160px 200px);
+	background-color: var(--color-blue);
+	background-image: url("../images/masthead-pattern.svg");
+	background-repeat: repeat;
+	background-size: 380px 253px;
 	border-bottom: var(--border-width) solid var(--border);
 }
 
@@ -339,7 +340,10 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	margin-top: 3.5rem;
 	padding: 2rem 1.25rem;
 	text-align: center;
-	background: repeating-linear-gradient(135deg, var(--color-purple) 0 30px, var(--text) 30px 60px);
+	background-color: var(--color-blue);
+	background-image: url("../images/masthead-pattern.svg");
+	background-repeat: repeat;
+	background-size: 380px 253px;
 	border-top: var(--border-width) solid var(--border);
 }
 .footer-links { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; padding: 0; margin: 0 0 1.1rem; }
