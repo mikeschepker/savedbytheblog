@@ -4,13 +4,28 @@
 	literal HTML comments in template source (even correctly-formed ones) as a security
 	measure, so the comment markers render as visible text instead of actually hiding
 	anything. Rather than fight that, this shows a real, styled "Reply on Bluesky" link.
+
+	.Params.bluesky.url is an AT Protocol URI (at://did:.../app.bsky.feed.post/rkey), not
+	a web URL, so it has to be rewritten into a bsky.app link before it's usable as href.
 */}}
+{{ $blueskyHref := "" }}
+{{ if .Params.bluesky }}
+	{{ $uri := .Params.bluesky.url }}
+	{{ if hasPrefix $uri "at://" }}
+		{{ $parts := split (strings.TrimPrefix "at://" $uri) "/" }}
+		{{ if eq (len $parts) 3 }}
+			{{ $blueskyHref = printf "https://bsky.app/profile/%s/post/%s" (index $parts 0) (index $parts 2) }}
+		{{ end }}
+	{{ else }}
+		{{ $blueskyHref = $uri }}
+	{{ end }}
+{{ end }}
 {{ if eq .Kind "home" }}
-	{{ if .Params.bluesky }}
-		<a class="u-syndication" {{ printf "href=%q" .Params.bluesky.url | safeHTMLAttr }} style="display: none;">Also on Bluesky</a>
+	{{ if $blueskyHref }}
+		<a class="u-syndication" {{ printf "href=%q" $blueskyHref | safeHTMLAttr }} style="display: none;">Also on Bluesky</a>
 	{{ end }}
 {{ else }}
-	{{ if .Params.bluesky }}
-		<p class="bluesky-reply"><a class="u-syndication" {{ printf "href=%q" .Params.bluesky.url | safeHTMLAttr }}>Reply on Bluesky</a></p>
+	{{ if $blueskyHref }}
+		<p class="bluesky-reply"><a class="u-syndication" {{ printf "href=%q" $blueskyHref | safeHTMLAttr }}>Reply on Bluesky</a></p>
 	{{ end }}
 {{ end }}
