@@ -414,6 +414,47 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 .content-page.not-found { text-align: center; }
 .content-page.not-found .page-title { text-align: center; }
 
+/* ---- subscribe form -------------------------------------------------------- */
+
+.page-content form[action*="micro.blog/users/subscribe"] {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .75rem;
+	margin: 1.5rem 0;
+}
+.page-content form[action*="micro.blog/users/subscribe"] input[type="text"] {
+	flex: 1 1 220px;
+	font-family: var(--font-body);
+	font-size: 1rem;
+	color: var(--text);
+	background: var(--bg);
+	border: 2px solid var(--border);
+	border-radius: 999px;
+	padding: .6rem 1.1rem;
+}
+.page-content form[action*="micro.blog/users/subscribe"] input[type="text"]:focus {
+	outline: 3px solid var(--color-teal);
+	outline-offset: 2px;
+}
+.page-content form[action*="micro.blog/users/subscribe"] input[type="submit"] {
+	font-family: var(--font-display);
+	text-transform: uppercase;
+	letter-spacing: .04em;
+	font-size: .85rem;
+	color: var(--text-inverse);
+	background: var(--color-teal);
+	border: 2px solid var(--border);
+	border-radius: 999px;
+	padding: .6rem 1.4rem;
+	box-shadow: 3px 3px 0 var(--border);
+	cursor: pointer;
+	transition: transform .15s ease, box-shadow .15s ease;
+}
+.page-content form[action*="micro.blog/users/subscribe"] input[type="submit"]:hover {
+	transform: translate(-2px, -2px);
+	box-shadow: 5px 5px 0 var(--border);
+}
+
 /* ---- tag / term cloud ------------------------------------------------------ */
 
 .term-cloud { list-style: none; display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; padding: 0; margin: 2rem 0; }
@@ -603,4 +644,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	.post-card { padding: 1.25rem 1.4rem; }
 	.post-list .post-card { transform: none; box-shadow: 4px 4px 0 var(--accent); }
 	.post-card:hover { transform: translateY(-3px); }
+	.page-content form[action*="micro.blog/users/subscribe"] { flex-direction: column; align-items: stretch; }
+	.page-content form[action*="micro.blog/users/subscribe"] input[type="text"] { flex: 0 1 auto; }
+	.page-content form[action*="micro.blog/users/subscribe"] input[type="submit"] { width: 100%; }
 }
