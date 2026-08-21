@@ -1,0 +1,18 @@
+{{ define "main" }}
+	<h1 class="section-title">Photos</h1>
+	{{ $list := where .Site.Pages ".Params.photos" "!=" nil }}
+	{{ if gt (len $list) 0 }}
+		<div class="photo-grid">
+			{{ range $index, $page := $list }}
+				<a class="photo-tile" href="{{ $page.Permalink }}">
+					{{ range first 1 $page.Params.photos }}
+						<img src="{{ . }}" loading="lazy" alt="{{ $page.Title }}">
+					{{ end }}
+					<span class="photo-caption">{{ $page.Date.Format "Jan 2, 2006" }}</span>
+				</a>
+			{{ end }}
+		</div>
+	{{ else }}
+		<p class="photo-empty">No photos yet — posts with photos will show up here.</p>
+	{{ end }}
+{{ end }}

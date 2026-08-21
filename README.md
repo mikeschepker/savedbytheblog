@@ -11,8 +11,18 @@ This is an original design *inspired by* the aesthetic of the era (color-blockin
 * Hall-pass–style date badges and pill-shaped category tags
 * Squiggly link underlines, comic-style blockquotes, and a striped `<hr>` to match the masthead
 * Full support for Micro.blog conversation/reply plugins ([Reply by Email](https://github.com/sod/plugin-reply-by-email), [Conversation on Micro.blog](https://github.com/svendahlstrand/plugin-conversation-on-mb)), IndieAuth/Micropub/Webmention endpoints, RSS/JSON/podcast feeds, and the `plugins_css` / `plugins_js` / `plugins_html` hooks
-* Automatic dark mode ("Bayside after dark") via `prefers-color-scheme`, swapping to a deep navy background while keeping the neon accents
+* Automatic dark mode ("Bayside after dark") via `prefers-color-scheme`, plus a manual sun/moon toggle in the masthead (remembered per-visitor via `localStorage`)
+* Styled **Archive** (`/archive/`) and **Photos** (`/photos/`) pages — a compact, year-grouped list and a Polaroid-style photo grid — linked from the footer
 * Post excerpts via a custom `<!--excerpt-->...<!--more-->` tag, same convention used by other Micro.blog themes
+
+## Theme options
+
+Configurable from the plugin's settings screen on Micro.blog (or directly as `params.*` in `config.json`):
+
+* **Subtitle** / **Description** — `params.subtitle`, `params.description`
+* **Posts per page** — `params.posts_per_page` (defaults to 10)
+* **Custom `<head>` code** — `params.custom_head_html`, raw HTML/meta tags/tracking scripts inserted before `</head>`
+* **Custom footer code** — `params.custom_footer`, Markdown (raw HTML allowed) inserted at the end of the footer. Uses the same param as Micro.blog's official [Custom footer](https://github.com/microdotblog/plugin-footer) plugin, so the two are interchangeable.
 
 ## Customizing colors
 

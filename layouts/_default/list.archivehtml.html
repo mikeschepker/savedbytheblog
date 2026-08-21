@@ -1,0 +1,29 @@
+{{ define "main" }}
+	<h1 class="section-title">Archive</h1>
+
+	{{ $categories := (.Site.GetPage "taxonomyTerm" "categories") }}
+	{{ if $categories }}
+		{{ if gt (len $categories.Pages) 0 }}
+			<ul class="archive-categories">
+				{{ range $categories.Pages }}
+					<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+				{{ end }}
+			</ul>
+		{{ end }}
+	{{ end }}
+
+	{{ $groups := (where .Site.Pages "Type" "post").GroupByDate "2006" }}
+	{{ range $groups }}
+		<h2 class="archive-year">{{ .Key }}</h2>
+		<ul class="archive-year-list">
+			{{ range .Pages }}
+				<li class="archive-row">
+					<a class="archive-row-link" href="{{ .RelPermalink }}">
+						<time class="archive-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
+						<span class="archive-title">{{ if .Title }}{{ .Title }}{{ else }}{{ .Summary | plainify | truncate 70 }}{{ end }}</span>
+					</a>
+				</li>
+			{{ end }}
+		</ul>
+	{{ end }}
+{{ end }}

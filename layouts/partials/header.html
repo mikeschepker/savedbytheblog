@@ -1,4 +1,7 @@
 <header class="masthead">
+	<button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark mode">
+		<span aria-hidden="true">🌙</span>
+	</button>
 	<div class="masthead-inner">
 		<a class="site-title" href="{{ .Site.BaseURL }}">
 			<span class="site-title-text">{{ .Site.Title }}</span>
@@ -14,3 +17,25 @@
 		</nav>
 	</div>
 </header>
+<script>
+(function () {
+	var btn = document.getElementById('theme-toggle');
+	if (!btn) return;
+	var icon = btn.querySelector('span');
+	function current() {
+		var attr = document.documentElement.getAttribute('data-theme');
+		if (attr === 'light' || attr === 'dark') return attr;
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	}
+	function sync() {
+		icon.textContent = current() === 'dark' ? '☀️' : '🌙';
+	}
+	sync();
+	btn.addEventListener('click', function () {
+		var next = current() === 'dark' ? 'light' : 'dark';
+		document.documentElement.setAttribute('data-theme', next);
+		try { localStorage.setItem('sbtb-theme', next); } catch (e) {}
+		sync();
+	});
+})();
+</script>

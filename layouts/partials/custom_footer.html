@@ -1,0 +1,5 @@
+{{ with .Site.Params.custom_footer }}
+	<div class="custom-footer-band">
+		<div class="custom-footer-code">{{ . | markdownify }}</div>
+	</div>
+{{ end }}

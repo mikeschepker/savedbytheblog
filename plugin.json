@@ -1,5 +1,5 @@
 {
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"title": "Saved by the Blog theme",
 	"description": "Switches your blog to the Saved by the Blog theme — a bold, 90s-sitcom-inspired design. Set your built-in design to Blank before installing.",
 	"fields": [
@@ -12,6 +12,24 @@
 			"field": "params.description",
 			"label": "Description",
 			"placeholder": "Enter your site description here"
+		},
+		{
+			"field": "params.posts_per_page",
+			"label": "Posts per page",
+			"type": "number",
+			"placeholder": "Enter the number of posts per page (default: 10)"
+		},
+		{
+			"field": "params.custom_head_html",
+			"label": "Custom <head> code (tracking scripts, meta tags)",
+			"type": "string",
+			"placeholder": "This will be added before the closing </head>"
+		},
+		{
+			"field": "params.custom_footer",
+			"label": "Custom footer code",
+			"type": "markdown",
+			"placeholder": "This will be added at the end of the footer"
 		}
 	]
 }

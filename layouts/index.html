@@ -1,7 +1,7 @@
 {{ define "main" }}
 	<h1 class="section-title">Recent Posts</h1>
 	<div class="post-list h-feed">
-		{{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+		{{ $paginator := .Paginate (where .Site.Pages "Type" "post") (or .Site.Params.posts_per_page 10) }}
 		{{ range $paginator.Pages }}
 			{{ partial "li.html" . }}
 		{{ end }}

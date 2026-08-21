@@ -1,6 +1,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+	(function () {
+		try {
+			var t = localStorage.getItem('sbtb-theme');
+			if (t === 'light' || t === 'dark') { document.documentElement.setAttribute('data-theme', t); }
+		} catch (e) {}
+	})();
+	</script>
 	<title>{{ .Title }}{{ if ne .Title .Site.Title }} // {{ .Site.Title }}{{ end }}</title>
 
 	{{ partial "meta.html" . }}
@@ -13,4 +21,8 @@
 	<link rel="stylesheet" href="{{ "css/style.css" | absURL }}?{{ .Site.Params.theme_seconds }}">
 
 	{{ partial "microblog_head.html" . }}
+
+	{{ with .Site.Params.custom_head_html }}
+		{{ . | safeHTML }}
+	{{ end }}
 </head>

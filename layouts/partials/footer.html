@@ -1,6 +1,8 @@
 <footer class="site-footer">
 	<div class="site-footer-inner">
 		<ul class="footer-links">
+			<li><a href="{{ "archive" | absURL }}">Archive</a></li>
+			<li><a href="{{ "photos" | absURL }}">Photos</a></li>
 			<li><a href="{{ "feed.xml" | absURL }}">RSS</a></li>
 			<li><a href="{{ "feed.json" | absURL }}">JSON</a></li>
 			{{ if templates.Exists "partials/surprise-me-head.html" }}

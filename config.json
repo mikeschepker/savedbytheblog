@@ -24,9 +24,30 @@
 			"isPlainText": true,
 			"notAlternative": true
 		},
+		"ArchiveHTML": {
+			"mediaType": "text/html",
+			"path": "archive",
+			"baseName": "index",
+			"isHTML": true,
+			"notAlternative": true
+		},
 		"ArchiveJSON": {
 			"mediaType": "application/json",
 			"path": "archive",
+			"baseName": "index",
+			"isPlainText": true,
+			"notAlternative": true
+		},
+		"PhotosHTML": {
+			"mediaType": "text/html",
+			"path": "photos",
+			"baseName": "index",
+			"isHTML": true,
+			"notAlternative": true
+		},
+		"PhotosJSON": {
+			"mediaType": "application/json",
+			"path": "photos",
 			"baseName": "index",
 			"isPlainText": true,
 			"notAlternative": true
@@ -45,7 +66,7 @@
 		}
 	},
 	"outputs": {
-		"home": [ "HTML", "RSS", "JSON", "RSD", "ArchiveJSON", "PodcastXML", "PodcastJSON" ],
+		"home": [ "HTML", "RSS", "JSON", "RSD", "ArchiveHTML", "ArchiveJSON", "PhotosHTML", "PhotosJSON", "PodcastXML", "PodcastJSON" ],
 		"page": [ "HTML" ],
 		"section": [ "HTML" ],
 		"taxonomy": [ "HTML", "RSS", "JSON" ],
@@ -58,6 +79,13 @@
 	"uglyURLs": false,
 	"blackfriday": {
 		"fractions": false
+	},
+	"markup": {
+		"goldmark": {
+			"renderer": {
+				"unsafe": true
+			}
+		}
 	},
 	"enableRobotsTXT": true,
 	"languageCode": "[LANGUAGE]",
@@ -87,6 +115,9 @@
 		"plugins_js": [],
 		"plugins_html": [],
 		"subtitle": "enter your subtitle here",
-		"ogimage": "https://micro.blog/[USERNAME]/avatar.jpg"
+		"ogimage": "https://micro.blog/[USERNAME]/avatar.jpg",
+		"posts_per_page": 10,
+		"custom_head_html": "",
+		"custom_footer": ""
 	}
 }
