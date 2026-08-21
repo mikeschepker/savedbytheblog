@@ -350,8 +350,55 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	margin: 0 0 1.4rem;
 }
 .post-full .post-meta { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 2px dashed var(--border); }
-.email-reply, .conversation-link { font-size: .88rem; margin-top: .75rem; }
-.email-reply a, .conversation-link a { color: var(--color-teal); font-weight: 600; }
+.email-reply, .conversation-link, .bluesky-reply { font-size: .88rem; margin-top: .75rem; }
+.email-reply a, .conversation-link a, .bluesky-reply a { color: var(--color-teal); font-weight: 600; }
+
+/* ---- micro.blog conversation replies --------------------------------------- */
+
+.microblog_conversation { margin: 2rem 0 0; padding-top: 1.5rem; }
+.microblog_conversation::before {
+	content: "💬 Replies";
+	display: block;
+	font-family: var(--font-display);
+	text-transform: uppercase;
+	letter-spacing: .02em;
+	font-size: 1rem;
+	color: var(--color-purple);
+	margin-bottom: 1rem;
+}
+.microblog_post {
+	background: var(--surface);
+	border: 2px solid var(--border);
+	border-radius: 12px;
+	padding: 1rem 1.25rem;
+	margin-bottom: 1rem;
+	box-shadow: 4px 4px 0 var(--color-teal);
+}
+.microblog_conversation .microblog_post:nth-child(4n+1) { box-shadow: 4px 4px 0 var(--color-teal); }
+.microblog_conversation .microblog_post:nth-child(4n+2) { box-shadow: 4px 4px 0 var(--color-pink); }
+.microblog_conversation .microblog_post:nth-child(4n+3) { box-shadow: 4px 4px 0 var(--color-yellow); }
+.microblog_conversation .microblog_post:nth-child(4n+4) { box-shadow: 4px 4px 0 var(--color-purple); }
+.microblog_user { display: flex; align-items: center; gap: .6rem; margin-bottom: .5rem; }
+.microblog_avatar {
+	width: 32px !important;
+	height: 32px !important;
+	max-width: 32px !important;
+	border-radius: 50%;
+	border: 2px solid var(--border);
+	object-fit: cover;
+}
+.microblog_fullname { font-weight: 700; font-size: .92rem; color: var(--text); }
+.microblog_text p { margin: 0; font-size: .95rem; }
+.microblog_time { margin-top: .5rem; }
+.microblog_time a {
+	font-size: .72rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: .03em;
+	color: var(--color-teal);
+	text-decoration: none;
+}
+.microblog_time a:hover { color: var(--color-red); }
 
 /* ---- content pages -------------------------------------------------------- */
 

@@ -1,0 +1,16 @@
+{{/*
+	Overrides Micro.blog's built-in microblog_syndication.html. That version wraps the
+	single-post link in "<! -- ... -->" to hide it, but Hugo's html/template escapes
+	literal HTML comments in template source (even correctly-formed ones) as a security
+	measure, so the comment markers render as visible text instead of actually hiding
+	anything. Rather than fight that, this shows a real, styled "Reply on Bluesky" link.
+*/}}
+{{ if eq .Kind "home" }}
+	{{ if .Params.bluesky }}
+		<a class="u-syndication" {{ printf "href=%q" .Params.bluesky.url | safeHTMLAttr }} style="display: none;">Also on Bluesky</a>
+	{{ end }}
+{{ else }}
+	{{ if .Params.bluesky }}
+		<p class="bluesky-reply"><a class="u-syndication" {{ printf "href=%q" .Params.bluesky.url | safeHTMLAttr }}>Reply on Bluesky</a></p>
+	{{ end }}
+{{ end }}
