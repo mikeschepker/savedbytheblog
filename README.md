@@ -19,6 +19,15 @@ This is an original design *inspired by* the aesthetic of the era (color-blockin
 * Styled **Archive** (`/archive/`) and **Photos** (`/photos/`) pages — a compact, year-grouped list and a Polaroid-style photo grid — linked from the footer
 * Post excerpts via a custom `<!--excerpt-->...<!--more-->` tag, same convention used by other Micro.blog themes
 
+## SEO
+
+* Per-page `<meta name="description">`, Open Graph, and Twitter Card tags — each post uses its own summary (or a `description` front matter field), not a repeated site-wide description
+* Open Graph/Twitter image and `schema.org` `image` prefer a post's own photo (`photos`/`images` front matter) over the site avatar
+* Self-referencing `<link rel="canonical">` on every page
+* Enriched `schema.org` `BlogPosting` microdata on posts (`image`, `author`, `publisher`, `mainEntityOfPage`, `dateModified`), on top of the existing `h-entry` microformats
+* A single `<h1>` per page (the page/post title — the site name in the masthead is a logo link, not a heading), and in-content Markdown headings (`##`, `###`) get real hierarchy and styling instead of falling back to unstyled browser defaults
+* RSS/JSON feeds, sitemap, and `robots.txt` come from Micro.blog's platform-level templates, not this theme — they're included automatically regardless of theme
+
 ## Theme options
 
 Configurable from the plugin's settings screen on Micro.blog (or directly as `params.*` in `config.json`):

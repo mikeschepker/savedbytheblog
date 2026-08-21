@@ -1,3 +1,12 @@
-<meta name="description" content="{{ or .Site.Params.description .Site.Params.subtitle }}">
+{{ $description := "" }}
+{{ if .Description }}
+	{{ $description = .Description | plainify | chomp }}
+{{ else if .IsPage }}
+	{{ $description = .Summary | plainify | chomp }}
+{{ else }}
+	{{ $description = or .Site.Params.description .Site.Params.subtitle | plainify | chomp }}
+{{ end }}
+<meta name="description" content="{{ $description | truncate 160 }}">
 <meta name="theme-color" content="#ff3b5c">
 <meta name="author" content="{{ .Site.Params.author.name }}">
+<link rel="canonical" href="{{ .Permalink }}">
