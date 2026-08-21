@@ -1,0 +1,16 @@
+<header class="masthead">
+	<div class="masthead-inner">
+		<a class="site-title" href="{{ .Site.BaseURL }}">
+			<span class="site-title-text">{{ .Site.Title }}</span>
+		</a>
+		{{ with .Site.Params.subtitle }}<p class="site-subtitle">{{ . }}</p>{{ end }}
+		<nav class="site-nav" aria-label="Main navigation">
+			<ul>
+				<li><a href="{{ .Site.BaseURL }}">Home</a></li>
+				{{ range .Site.Menus.main }}
+					<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+				{{ end }}
+			</ul>
+		</nav>
+	</div>
+</header>

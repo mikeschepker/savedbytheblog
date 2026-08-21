@@ -1,0 +1,53 @@
+# Saved by the Blog
+
+A bold, color-blocked [Micro.blog](https://micro.blog) theme inspired by early-90s teen sitcom title cards — chunky poster type, locker-sticker cards with hard drop shadows, hall-pass date stamps, and a bright Bayside-style palette.
+
+This is an original design *inspired by* the aesthetic of the era (color-blocking, geometric stripes, varsity type) — no show logos, characters, or trademarked artwork are included.
+
+## Features
+
+* Poster-style masthead with a diagonal color-stripe background and a rotated "taped-on" title card
+* Post list rendered as stacked, slightly-rotated sticker cards, each with a different accent color and hard offset shadow
+* Hall-pass–style date badges and pill-shaped category tags
+* Squiggly link underlines, comic-style blockquotes, and a striped `<hr>` to match the masthead
+* Full support for Micro.blog conversation/reply plugins ([Reply by Email](https://github.com/sod/plugin-reply-by-email), [Conversation on Micro.blog](https://github.com/svendahlstrand/plugin-conversation-on-mb)), IndieAuth/Micropub/Webmention endpoints, RSS/JSON/podcast feeds, and the `plugins_css` / `plugins_js` / `plugins_html` hooks
+* Automatic dark mode ("Bayside after dark") via `prefers-color-scheme`, swapping to a deep navy background while keeping the neon accents
+* Post excerpts via a custom `<!--excerpt-->...<!--more-->` tag, same convention used by other Micro.blog themes
+
+## Customizing colors
+
+All the theme's colors live as CSS custom properties near the top of `static/css/style.css`:
+
+```css
+:root {
+  --color-red: #ff3b5c;
+  --color-pink: #ff2d95;
+  --color-purple: #7b2ff7;
+  --color-teal: #00c9c8;
+  --color-yellow: #ffd23f;
+
+  --bg: #fff8ec;      /* page background */
+  --surface: #ffffff; /* card/panel background */
+  --text: #1a1a2e;    /* body text + comic-style outlines */
+}
+```
+
+Change these (or override them from your blog's Custom CSS field) to retheme the accent palette without touching any markup.
+
+## Installing on Micro.blog
+
+1. In your Micro.blog design settings, set the built-in template to **Blank** and remove any other theme plugins.
+2. Install this theme as a plugin (point Micro.blog at this GitHub repo).
+3. Once installed, set your **Subtitle** and **Description** from the plugin's settings screen — these map to `params.subtitle` and `params.description` in `config.json`.
+
+## Local development
+
+This is a standard [Hugo](https://gohugo.io) theme, structured the way Micro.blog expects (`theme.toml`, `config.json`, `plugin.json`, `layouts/`, `static/`). To preview locally, drop this repo into `themes/savedbytheblog` inside a Hugo site and run:
+
+```sh
+hugo server -t savedbytheblog
+```
+
+## License
+
+MIT — see [LICENSE.md](LICENSE.md).

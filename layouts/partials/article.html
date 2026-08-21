@@ -1,0 +1,40 @@
+<article class="post post-full h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+	{{ if .Title }}
+		<h1 class="post-title p-name" itemprop="name headline">{{ .Title }}</h1>
+		{{ $check := substr .Content 0 30 }}
+		{{ if in $check "--excerpt--" }}
+			<div class="excerpt"><p>{{ .Summary }}</p></div>
+			<div class="post-content e-content" itemprop="articleBody">{{ .Content }}</div>
+		{{ else }}
+			<div class="post-content e-content" itemprop="articleBody">{{ .Content }}</div>
+		{{ end }}
+	{{ else }}
+		<div class="post-content e-content" itemprop="articleBody">{{ .Content }}</div>
+	{{ end }}
+
+	{{ if templates.Exists "partials/reply-by-email.html" }}
+		<p class="email-reply">{{ partial "reply-by-email.html" . }}</p>
+	{{ end }}
+	{{ if templates.Exists "partials/conversation-link.html" }}
+		<p class="conversation-link">{{ partial "conversation-link.html" . }}</p>
+	{{ end }}
+	{{ if templates.Exists "partials/microblog_syndication.html" }}
+		{{ partial "microblog_syndication.html" . }}
+	{{ end }}
+
+	<div class="post-meta">
+		<time class="post-date dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05.000-07:00" }}" itemprop="datePublished">
+			<a class="u-url" href="{{ .RelPermalink }}">{{ .Date.Format "Jan 2, 2006" }}</a>
+		</time>
+		{{ with .Params.categories }}
+			<span class="post-categories">
+				{{ range . }}
+					<a class="post-category" href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}">{{ . }}</a>
+				{{ end }}
+			</span>
+		{{ end }}
+	</div>
+</article>
+{{ if .Site.Params.include_conversation }}
+	<script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
+{{ end }}

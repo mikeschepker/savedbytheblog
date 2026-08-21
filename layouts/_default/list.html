@@ -1,0 +1,9 @@
+{{ define "main" }}
+	<h1 class="section-title">{{ .Title }}</h1>
+	<div class="post-list h-feed">
+		{{ range .Paginator.Pages }}
+			{{ partial "li.html" . }}
+		{{ end }}
+	</div>
+	{{ partial "pagination.html" . }}
+{{ end }}

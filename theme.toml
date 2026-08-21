@@ -1,0 +1,15 @@
+# theme.toml for a Hugo theme
+# See https://github.com/spf13/hugoThemes#themetoml for an example
+
+name = "Saved by the Blog"
+license = "MIT"
+licenselink = "https://github.com/mikeschepker/savedbytheblog/blob/main/LICENSE.md"
+description = "A bold, color-blocked theme inspired by 90s teen sitcoms — chunky retro type, locker-poster energy, and a Bayside-bright palette."
+homepage = "https://github.com/mikeschepker/savedbytheblog"
+tags = ["blog", "colorful", "retro", "bold"]
+features = ["blog"]
+min_version = 0.20
+
+[author]
+name = "Mike Schepker"
+homepage = "https://github.com/mikeschepker"

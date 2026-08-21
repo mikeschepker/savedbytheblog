@@ -1,0 +1,17 @@
+<footer class="site-footer">
+	<div class="site-footer-inner">
+		<ul class="footer-links">
+			<li><a href="{{ "feed.xml" | absURL }}">RSS</a></li>
+			<li><a href="{{ "feed.json" | absURL }}">JSON</a></li>
+			{{ if templates.Exists "partials/surprise-me-head.html" }}
+				<li><a href="{{ "surprise-me" | absURL }}">Surprise Me!</a></li>
+			{{ end }}
+			<li><a rel="me" href="https://micro.blog/{{ .Site.Params.author.username }}">Micro.blog</a></li>
+		</ul>
+		<p class="footer-credit">
+			&copy; {{ now.Format "2006" }} {{ or .Site.Params.author.name .Site.Title }} &middot;
+			Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>,
+			hosted on <a href="https://micro.blog" target="_blank" rel="noopener">Micro.blog</a>
+		</p>
+	</div>
+</footer>

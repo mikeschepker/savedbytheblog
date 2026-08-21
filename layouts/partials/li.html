@@ -1,0 +1,22 @@
+<article class="post post-card h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+	{{ if .Title }}
+		<h2 class="post-title"><a class="p-name u-url" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+		{{ $check := substr .Content 0 30 }}
+		{{ if in $check "--excerpt--" }}
+			<div class="excerpt"><p>{{ .Summary }}</p></div>
+			<p class="continue"><a href="{{ .Permalink }}">Keep reading &rarr;</a></p>
+		{{ else if .Truncated }}
+			<div class="post-content e-content">{{ .Summary }}</div>
+			<p class="continue"><a href="{{ .Permalink }}">Keep reading &rarr;</a></p>
+		{{ else }}
+			<div class="post-content e-content" itemprop="articleBody">{{ .Content }}</div>
+		{{ end }}
+	{{ else }}
+		<div class="post-content e-content" itemprop="articleBody">{{ .Content }}</div>
+	{{ end }}
+	<div class="post-meta">
+		<time class="post-date dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05.000-07:00" }}" itemprop="datePublished">
+			<a class="u-url" href="{{ .RelPermalink }}">{{ .Date.Format "Jan 2, 2006" }}</a>
+		</time>
+	</div>
+</article>

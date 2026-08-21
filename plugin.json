@@ -1,0 +1,17 @@
+{
+	"version": "1.0.0",
+	"title": "Saved by the Blog theme",
+	"description": "Switches your blog to the Saved by the Blog theme — a bold, 90s-sitcom-inspired design. Set your built-in design to Blank before installing.",
+	"fields": [
+		{
+			"field": "params.subtitle",
+			"label": "Subtitle",
+			"placeholder": "e.g. Bayside's finest blog"
+		},
+		{
+			"field": "params.description",
+			"label": "Description",
+			"placeholder": "Enter your site description here"
+		}
+	]
+}
