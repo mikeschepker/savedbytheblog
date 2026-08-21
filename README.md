@@ -4,6 +4,10 @@ A bold, color-blocked [Micro.blog](https://micro.blog) theme inspired by early-9
 
 This is an original design *inspired by* the aesthetic of the era (color-blocking, geometric stripes, varsity type) — no show logos, characters, or trademarked artwork are included.
 
+## Screenshot
+
+![Screenshot of the Saved by the Blog theme homepage](screenshot/home.png)
+
 ## Features
 
 * Poster-style masthead with a diagonal color-stripe background and a rotated "taped-on" title card
