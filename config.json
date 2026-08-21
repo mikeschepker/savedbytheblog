@@ -118,6 +118,7 @@
 		"ogimage": "https://micro.blog/[USERNAME]/avatar.jpg",
 		"posts_per_page": 10,
 		"custom_head_html": "",
-		"custom_footer": ""
+		"custom_footer": "",
+		"show_full_posts": false
 	}
 }

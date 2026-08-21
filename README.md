@@ -27,6 +27,7 @@ Configurable from the plugin's settings screen on Micro.blog (or directly as `pa
 * **Posts per page** — `params.posts_per_page` (defaults to 10)
 * **Custom `<head>` code** — `params.custom_head_html`, raw HTML/meta tags/tracking scripts inserted before `</head>`
 * **Custom footer code** — `params.custom_footer`, Markdown (raw HTML allowed) inserted at the end of the footer. Uses the same param as Micro.blog's official [Custom footer](https://github.com/microdotblog/plugin-footer) plugin, so the two are interchangeable.
+* **Show full posts** — `params.show_full_posts`, boolean, defaults to off. When on, the home/archive/category lists show the complete post instead of a "Keep reading" excerpt for long posts. A manual `<!--more-->` cut, or the `<!--excerpt-->` tag below, always wins regardless of this setting — it's only for automatic truncation.
 
 ## Customizing colors
 

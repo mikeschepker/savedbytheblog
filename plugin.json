@@ -30,6 +30,11 @@
 			"label": "Custom footer code",
 			"type": "markdown",
 			"placeholder": "This will be added at the end of the footer"
+		},
+		{
+			"field": "params.show_full_posts",
+			"label": "Show full posts on the home/archive/category lists, instead of just an excerpt",
+			"type": "boolean"
 		}
 	]
 }
