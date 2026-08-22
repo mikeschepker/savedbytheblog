@@ -13,6 +13,12 @@
 	--color-yellow: #ffd23f;
 	--color-blue: #1f3fd6;
 
+	/* fixed text colors for badges/buttons sitting on a brand-accent
+	   background — those backgrounds don't flip in dark mode, so the
+	   text on them can't use the flipping --text/--text-inverse tokens */
+	--brand-text-dark: #1a1a2e;
+	--brand-text-light: #ffffff;
+
 	/* semantic tokens — these flip for dark mode below */
 	--bg: #fff8ec;
 	--surface: #ffffff;
@@ -70,6 +76,25 @@ body {
 	max-width: 700px;
 	margin: 0 auto;
 	padding: 2.5rem 1.25rem 4rem;
+}
+
+.skip-link {
+	position: absolute;
+	top: -4rem;
+	left: 1rem;
+	z-index: 100;
+	background: var(--surface);
+	color: var(--text);
+	font-weight: 700;
+	text-decoration: none;
+	padding: .6rem 1.1rem;
+	border: 2px solid var(--border);
+	border-radius: 8px;
+	box-shadow: 3px 3px 0 var(--border);
+	transition: top .15s ease;
+}
+.skip-link:focus {
+	top: 1rem;
 }
 
 a { color: var(--color-purple); text-decoration: underline wavy var(--color-teal); text-underline-offset: 3px; }
@@ -225,7 +250,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	letter-spacing: .05em;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: var(--text-inverse);
+	color: var(--brand-text-light);
 	background: var(--color-purple);
 	border: 2px solid var(--border);
 	border-radius: 999px;
@@ -234,9 +259,9 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	transition: transform .15s ease, box-shadow .15s ease;
 }
 .site-nav li:nth-child(4n+1) a { background: var(--color-purple); }
-.site-nav li:nth-child(4n+2) a { background: var(--color-teal); }
-.site-nav li:nth-child(4n+3) a { background: var(--color-red); }
-.site-nav li:nth-child(4n+4) a { background: var(--color-yellow); color: var(--text); }
+.site-nav li:nth-child(4n+2) a { background: var(--color-teal); color: var(--brand-text-dark); }
+.site-nav li:nth-child(4n+3) a { background: var(--color-red); color: var(--brand-text-dark); }
+.site-nav li:nth-child(4n+4) a { background: var(--color-yellow); color: var(--brand-text-dark); }
 .site-nav a:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--border); color: inherit; }
 
 /* ---- section headings -------------------------------------------------- */
@@ -311,7 +336,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 .post-date { font-family: var(--font-body); font-weight: 600; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; }
 .post-date a {
 	display: inline-block;
-	color: var(--text);
+	color: var(--brand-text-dark);
 	background: var(--color-yellow);
 	border: 2px dashed var(--border);
 	border-radius: 6px;
@@ -324,7 +349,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	font-weight: 700;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: var(--text-inverse);
+	color: var(--brand-text-dark);
 	background: var(--color-teal);
 	border-radius: 999px;
 	padding: .18rem .65rem;
@@ -441,7 +466,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	text-transform: uppercase;
 	letter-spacing: .04em;
 	font-size: .85rem;
-	color: var(--text-inverse);
+	color: var(--brand-text-dark);
 	background: var(--color-teal);
 	border: 2px solid var(--border);
 	border-radius: 999px;
@@ -463,7 +488,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	text-transform: uppercase;
 	font-size: .85rem;
 	text-decoration: none;
-	color: var(--text-inverse);
+	color: var(--brand-text-dark);
 	background: var(--color-teal);
 	border: 2px solid var(--border);
 	border-radius: 999px;
@@ -487,7 +512,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	text-transform: uppercase;
 	font-size: .78rem;
 	text-decoration: none;
-	color: var(--text-inverse);
+	color: var(--brand-text-light);
 	background: var(--color-purple);
 	border: 2px solid var(--border);
 	border-radius: 999px;
@@ -588,7 +613,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 }
 .page-nav a {
 	text-decoration: none;
-	color: var(--text-inverse);
+	color: var(--brand-text-dark);
 	background: var(--color-red);
 	border: 2px solid var(--border);
 	border-radius: 999px;
@@ -617,7 +642,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	text-transform: uppercase;
 	letter-spacing: .04em;
 	text-decoration: none;
-	color: var(--text);
+	color: var(--brand-text-dark);
 	background: var(--color-yellow);
 	border: 2px solid var(--border);
 	border-radius: 999px;
@@ -647,4 +672,15 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	.page-content form[action*="micro.blog/users/subscribe"] { flex-direction: column; align-items: stretch; }
 	.page-content form[action*="micro.blog/users/subscribe"] input[type="text"] { flex: 0 1 auto; }
 	.page-content form[action*="micro.blog/users/subscribe"] input[type="submit"] { width: 100%; }
+}
+
+/* ---- reduced motion --------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }

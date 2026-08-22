@@ -2,8 +2,9 @@
 <html lang="{{ or .Site.LanguageCode "en" }}">
 {{ partial "head.html" . }}
 <body>
+	<a class="skip-link" href="#main-content">Skip to content</a>
 	{{ partial "header.html" . }}
-	<div class="wrap">
+	<div class="wrap" id="main-content">
 		{{ block "main" . }}{{ end }}
 	</div>
 	{{ partial "footer.html" . }}
