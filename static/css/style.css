@@ -102,6 +102,11 @@ a:hover { color: var(--color-red); }
 
 img { max-width: 100%; height: auto; border-radius: 12px; border: var(--border-width) solid var(--border); }
 
+.post-image-link { display: inline-block; text-decoration: none; }
+.post-image-link img { cursor: zoom-in; }
+
+.post-content iframe, .post-content video { max-width: 100%; height: auto; border-radius: 12px; border: var(--border-width) solid var(--border); }
+
 .post-content h1, .post-content h2, .post-content h3,
 .post-content h4, .post-content h5, .post-content h6 {
 	font-family: var(--font-display);
