@@ -520,6 +520,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 }
 .page-content form[action*="micro.blog/users/subscribe"] input[type="text"] {
 	flex: 1 1 220px;
+	min-width: 0;
 	font-family: var(--font-body);
 	font-size: 1rem;
 	color: var(--text);
@@ -781,7 +782,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	.post-list .post-card { transform: none; box-shadow: 4px 4px 0 var(--accent); }
 	.post-card:hover { transform: translateY(-3px); }
 	.page-content form[action*="micro.blog/users/subscribe"] { flex-direction: column; align-items: stretch; }
-	.page-content form[action*="micro.blog/users/subscribe"] input[type="text"] { flex: 0 1 auto; }
+	.page-content form[action*="micro.blog/users/subscribe"] input[type="text"] { flex: 0 1 auto; width: 100%; }
 	.page-content form[action*="micro.blog/users/subscribe"] input[type="submit"] { width: 100%; }
 	.post-nav { flex-direction: column; }
 	.post-nav-next { text-align: left; align-items: flex-start; }
