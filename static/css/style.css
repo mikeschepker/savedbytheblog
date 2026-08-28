@@ -384,6 +384,71 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 .email-reply, .conversation-link, .bluesky-reply { font-size: .88rem; margin-top: .75rem; }
 .email-reply a, .conversation-link a, .bluesky-reply a { color: var(--color-teal); font-weight: 600; }
 
+/* ---- prev/next post navigation ---------------------------------------------- */
+
+.post-nav {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 2px dashed var(--border);
+}
+.post-nav-link {
+	flex: 1 1 0;
+	display: flex;
+	flex-direction: column;
+	gap: .3rem;
+	text-decoration: none;
+	color: var(--text);
+	background: var(--surface);
+	border: 2px solid var(--border);
+	border-radius: 12px;
+	padding: .75rem 1rem;
+	box-shadow: 4px 4px 0 var(--color-teal);
+	transition: transform .15s ease, box-shadow .15s ease;
+}
+.post-nav-next { text-align: right; align-items: flex-end; box-shadow: 4px 4px 0 var(--color-pink); }
+.post-nav-link:hover { transform: translate(-2px, -2px); color: var(--color-red); }
+.post-nav-prev:hover { box-shadow: 6px 6px 0 var(--color-teal); }
+.post-nav-next:hover { box-shadow: 6px 6px 0 var(--color-pink); }
+.post-nav-label {
+	font-family: var(--font-display);
+	text-transform: uppercase;
+	font-size: .72rem;
+	letter-spacing: .04em;
+	color: var(--color-purple);
+}
+.post-nav-title { font-weight: 600; font-size: .92rem; }
+
+/* ---- back to top -------------------------------------------------------------- */
+
+.back-to-top {
+	position: fixed;
+	right: 1.25rem;
+	bottom: 1.25rem;
+	z-index: 50;
+	width: 46px;
+	height: 46px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.3rem;
+	line-height: 1;
+	color: var(--brand-text-dark);
+	background: var(--color-yellow);
+	border: 2px solid var(--border);
+	border-radius: 999px;
+	box-shadow: 3px 3px 0 var(--border);
+	cursor: pointer;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(10px);
+	transition: opacity .2s ease, transform .2s ease, box-shadow .15s ease, visibility .2s;
+}
+.back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--border); }
+
 /* ---- micro.blog conversation replies --------------------------------------- */
 
 .microblog_conversation { margin: 2rem 0 0; padding-top: 1.5rem; }
@@ -718,6 +783,8 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	.page-content form[action*="micro.blog/users/subscribe"] { flex-direction: column; align-items: stretch; }
 	.page-content form[action*="micro.blog/users/subscribe"] input[type="text"] { flex: 0 1 auto; }
 	.page-content form[action*="micro.blog/users/subscribe"] input[type="submit"] { width: 100%; }
+	.post-nav { flex-direction: column; }
+	.post-nav-next { text-align: left; align-items: flex-start; }
 }
 
 /* ---- reduced motion --------------------------------------------------------------- */

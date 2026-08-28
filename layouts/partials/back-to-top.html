@@ -1,0 +1,18 @@
+<button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+	<span aria-hidden="true">&uarr;</span>
+</button>
+<script>
+(function () {
+	var btn = document.getElementById('back-to-top');
+	if (!btn) return;
+	function toggle() {
+		if (window.scrollY > 600) { btn.classList.add('is-visible'); }
+		else { btn.classList.remove('is-visible'); }
+	}
+	window.addEventListener('scroll', toggle, { passive: true });
+	toggle();
+	btn.addEventListener('click', function () {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	});
+})();
+</script>

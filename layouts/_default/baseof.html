@@ -9,6 +9,7 @@
 	</div>
 	{{ partial "footer.html" . }}
 	{{ partial "custom_footer.html" . }}
+	{{ partial "back-to-top.html" . }}
 	{{ range .Site.Params.plugins_js }}
 		<script src="{{ . }}"></script>
 	{{ end }}

@@ -11,6 +11,11 @@
 	</script>
 	<title>{{ .Title }}{{ if ne .Title .Site.Title }} // {{ .Site.Title }}{{ end }}</title>
 
+	{{ with .Site.Params.author.avatar }}
+		<link rel="icon" href="{{ . }}">
+		<link rel="apple-touch-icon" href="{{ . }}">
+	{{ end }}
+
 	{{ partial "meta.html" . }}
 	{{ partial "og.html" . }}
 

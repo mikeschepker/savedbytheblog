@@ -18,6 +18,9 @@ This is an original design *inspired by* the aesthetic of the era (color-blockin
 * Automatic dark mode ("Bayside after dark") via `prefers-color-scheme`, plus a manual sun/moon toggle in the masthead (remembered per-visitor via `localStorage`)
 * Styled **Archive** (`/archive/`) and **Photos** (`/photos/`) pages — a compact, year-grouped list and a Polaroid-style photo grid — linked from the footer
 * Post excerpts via a custom `<!--excerpt-->...<!--more-->` tag, same convention used by other Micro.blog themes
+* "Older"/"Newer" post navigation at the bottom of each post, styled as a pair of locker-sticker cards
+* A "back to top" button that fades in once you've scrolled, matching the masthead's dark-mode toggle
+* Favicon and apple-touch-icon, sourced automatically from your Micro.blog avatar
 
 ## SEO
 

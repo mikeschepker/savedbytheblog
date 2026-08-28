@@ -53,6 +53,35 @@
 		{{ end }}
 	</div>
 </article>
+
+{{ if eq .Type "post" }}
+	{{ $posts := where .Site.Pages "Type" "post" }}
+	{{ $prev := "" }}
+	{{ $next := "" }}
+	{{ range $i, $p := $posts }}
+		{{ if eq $p.RelPermalink $.RelPermalink }}
+			{{ if gt $i 0 }}{{ $next = index $posts (sub $i 1) }}{{ end }}
+			{{ if lt (add $i 1) (len $posts) }}{{ $prev = index $posts (add $i 1) }}{{ end }}
+		{{ end }}
+	{{ end }}
+	{{ if or $prev $next }}
+		<nav class="post-nav" aria-label="Post navigation">
+			{{ if $prev }}
+				<a class="post-nav-link post-nav-prev" href="{{ $prev.RelPermalink }}" rel="prev">
+					<span class="post-nav-label">&larr; Older</span>
+					<span class="post-nav-title">{{ if $prev.Title }}{{ $prev.Title }}{{ else }}{{ $prev.Summary | plainify | truncate 40 }}{{ end }}</span>
+				</a>
+			{{ end }}
+			{{ if $next }}
+				<a class="post-nav-link post-nav-next" href="{{ $next.RelPermalink }}" rel="next">
+					<span class="post-nav-label">Newer &rarr;</span>
+					<span class="post-nav-title">{{ if $next.Title }}{{ $next.Title }}{{ else }}{{ $next.Summary | plainify | truncate 40 }}{{ end }}</span>
+				</a>
+			{{ end }}
+		</nav>
+	{{ end }}
+{{ end }}
+
 {{ if .Site.Params.include_conversation }}
 	<script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
 {{ end }}
