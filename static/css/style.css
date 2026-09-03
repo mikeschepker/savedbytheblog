@@ -767,7 +767,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 	background-image: url("../images/masthead-pattern.svg");
 	background-repeat: repeat;
 	background-size: 380px 253px;
-	padding: 0 1.25rem 1.25rem;
+	padding: 1.25rem;
 	text-align: center;
 }
 .custom-footer-code { color: #fff8ec; font-size: .8rem; }
