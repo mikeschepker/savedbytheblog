@@ -1,7 +1,7 @@
 {{ define "main" }}
 	<h1 class="section-title">Archive</h1>
 
-	{{ $categories := (.Site.GetPage "taxonomyTerm" "categories") }}
+	{{ $categories := (.Site.GetPage "taxonomy" "categories") }}
 	{{ if $categories }}
 		{{ if gt (len $categories.Pages) 0 }}
 			<ul class="archive-categories">
