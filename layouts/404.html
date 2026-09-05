@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ or .Site.LanguageCode "en" }}">
+{{ define "main" }}
 {{ partial "head.html" . }}
-<body>
+
 	{{ partial "header.html" . }}
 	<div class="wrap">
 		<article class="content-page not-found">
@@ -12,5 +11,4 @@
 	{{ partial "footer.html" . }}
 	{{ partial "custom_footer.html" . }}
 	{{ partial "back-to-top.html" . }}
-</body>
-</html>
+	
