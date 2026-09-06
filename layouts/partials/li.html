@@ -4,14 +4,14 @@
 		{{ $check := substr .Content 0 30 }}
 		{{ if in $check "--excerpt--" }}
 			<div class="excerpt"><p>{{ .Summary }}</p></div>
-			<p class="continue"><a href="{{ .Permalink }}">Keep reading &rarr;</a></p>
+			<p class="continue"><a href="{{ .Permalink }}" data-umami-event="Keep Reading">Keep reading &rarr;</a></p>
 		{{ else if and .Truncated (in .RawContent "<!--more-->") }}
 			{{/* a manual <!--more--> cut is deliberate per-post intent, so it's always respected */}}
 			<div class="post-content e-content">{{ .Summary }}</div>
-			<p class="continue"><a href="{{ .Permalink }}">Keep reading &rarr;</a></p>
+			<p class="continue"><a href="{{ .Permalink }}" data-umami-event="Keep Reading">Keep reading &rarr;</a></p>
 		{{ else if and .Truncated (not .Site.Params.show_full_posts) }}
 			<div class="post-content e-content">{{ .Summary }}</div>
-			<p class="continue"><a href="{{ .Permalink }}">Keep reading &rarr;</a></p>
+			<p class="continue"><a href="{{ .Permalink }}" data-umami-event="Keep Reading">Keep reading &rarr;</a></p>
 		{{ else }}
 			<div class="post-content e-content" itemprop="articleBody">{{ .Content }}</div>
 		{{ end }}

@@ -3,15 +3,15 @@
 		<span aria-hidden="true">🌙</span>
 	</button>
 	<div class="masthead-inner">
-		<a class="site-title" href="{{ .Site.BaseURL }}">
+		<a class="site-title" href="{{ .Site.BaseURL }}" data-umami-event="Nav Link" data-umami-event-link="Logo">
 			<span class="site-title-text">{{ .Site.Title }}</span>
 		</a>
 		{{ with .Site.Params.subtitle }}<p class="site-subtitle">{{ . }}</p>{{ end }}
 		<nav class="site-nav" aria-label="Main navigation">
 			<ul>
-				<li><a href="{{ .Site.BaseURL }}">Home</a></li>
+				<li><a href="{{ .Site.BaseURL }}" data-umami-event="Nav Link" data-umami-event-link="Home">Home</a></li>
 				{{ range .Site.Menus.main }}
-					<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+					<li><a href="{{ .URL }}" data-umami-event="Nav Link" data-umami-event-link="{{ .Name }}">{{ .Name }}</a></li>
 				{{ end }}
 			</ul>
 		</nav>
@@ -36,6 +36,7 @@
 		document.documentElement.setAttribute('data-theme', next);
 		try { localStorage.setItem('sbtb-theme', next); } catch (e) {}
 		sync();
+		if (window.umami) { umami.track('Theme Toggle', { mode: next }); }
 	});
 })();
 </script>

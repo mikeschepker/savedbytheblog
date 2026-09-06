@@ -119,6 +119,8 @@
 		"posts_per_page": 10,
 		"custom_head_html": "",
 		"custom_footer": "",
-		"show_full_posts": false
+		"show_full_posts": false,
+		"umami_website_id": "",
+		"umami_url": ""
 	}
 }

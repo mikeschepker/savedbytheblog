@@ -2,10 +2,10 @@
 {{ if or $pag.HasPrev $pag.HasNext }}
 <nav class="page-nav" aria-label="Pagination">
 	{{ if $pag.HasPrev }}
-		<a class="page-nav-prev" href="{{ $pag.Prev.URL }}">&#10216; Newer</a>
+		<a class="page-nav-prev" href="{{ $pag.Prev.URL }}" data-umami-event="Pagination" data-umami-event-direction="Newer">&#10216; Newer</a>
 	{{ end }}
 	{{ if $pag.HasNext }}
-		<a class="page-nav-next" href="{{ $pag.Next.URL }}">Older &#10217;</a>
+		<a class="page-nav-next" href="{{ $pag.Next.URL }}" data-umami-event="Pagination" data-umami-event-direction="Older">Older &#10217;</a>
 	{{ end }}
 </nav>
 {{ end }}

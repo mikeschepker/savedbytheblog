@@ -1,19 +1,19 @@
 <footer class="site-footer">
 	<div class="site-footer-inner">
 		<ul class="footer-links">
-			<li><a href="{{ "archive" | absURL }}">Archive</a></li>
-			<li><a href="{{ "photos" | absURL }}">Photos</a></li>
-			<li><a href="{{ "feed.xml" | absURL }}">RSS</a></li>
-			<li><a href="{{ "feed.json" | absURL }}">JSON</a></li>
+			<li><a href="{{ "archive" | absURL }}" data-umami-event="Footer Link" data-umami-event-link="Archive">Archive</a></li>
+			<li><a href="{{ "photos" | absURL }}" data-umami-event="Footer Link" data-umami-event-link="Photos">Photos</a></li>
+			<li><a href="{{ "feed.xml" | absURL }}" data-umami-event="Footer Link" data-umami-event-link="RSS">RSS</a></li>
+			<li><a href="{{ "feed.json" | absURL }}" data-umami-event="Footer Link" data-umami-event-link="JSON">JSON</a></li>
 			{{ if templates.Exists "partials/surprise-me-head.html" }}
-				<li><a href="{{ "surprise-me" | absURL }}">Surprise Me!</a></li>
+				<li><a href="{{ "surprise-me" | absURL }}" data-umami-event="Footer Link" data-umami-event-link="Surprise Me">Surprise Me!</a></li>
 			{{ end }}
-			<li><a rel="me" href="https://micro.blog/{{ .Site.Params.author.username }}">Micro.blog</a></li>
+			<li><a rel="me" href="https://micro.blog/{{ .Site.Params.author.username }}" data-umami-event="Footer Link" data-umami-event-link="Micro.blog Profile">Micro.blog</a></li>
 		</ul>
 		<p class="footer-credit">
 			&copy; {{ now.Format "2006" }} {{ or .Site.Params.author.name .Site.Title }} &middot;
-			Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>,
-			hosted on <a href="https://micro.blog" target="_blank" rel="noopener">Micro.blog</a>
+			Powered by <a href="https://gohugo.io" target="_blank" rel="noopener" data-umami-event="Outbound Link" data-umami-event-link="Hugo">Hugo</a>,
+			hosted on <a href="https://micro.blog" target="_blank" rel="noopener" data-umami-event="Outbound Link" data-umami-event-link="Micro.blog">Micro.blog</a>
 		</p>
 	</div>
 </footer>

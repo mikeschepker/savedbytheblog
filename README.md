@@ -21,6 +21,7 @@ This is an original design *inspired by* the aesthetic of the era (color-blockin
 * "Older"/"Newer" post navigation at the bottom of each post, styled as a pair of locker-sticker cards
 * A "back to top" button that fades in once you've scrolled, matching the masthead's dark-mode toggle
 * Favicon and apple-touch-icon, sourced automatically from your Micro.blog avatar
+* Built-in [Umami](https://umami.is) analytics support — set a website ID and the tracking script is added automatically, with `data-umami-event` attributes already wired up across nav links, footer links, pagination, post navigation, categories, photo tiles, in-post images, and the theme/back-to-top toggles for detailed event and link tracking out of the box
 
 ## SEO
 
@@ -40,6 +41,7 @@ Configurable from the plugin's settings screen on Micro.blog (or directly as `pa
 * **Custom `<head>` code** — `params.custom_head_html`, raw HTML/meta tags/tracking scripts inserted before `</head>`
 * **Custom footer code** — `params.custom_footer`, Markdown (raw HTML allowed) inserted at the end of the footer. Uses the same param as Micro.blog's official [Custom footer](https://github.com/microdotblog/plugin-footer) plugin, so the two are interchangeable.
 * **Show full posts** — `params.show_full_posts`, boolean, defaults to off. When on, the home/archive/category lists show the complete post instead of a "Keep reading" excerpt for long posts. A manual `<!--more-->` cut, or the `<!--excerpt-->` tag below, always wins regardless of this setting — it's only for automatic truncation.
+* **Umami analytics** — `params.umami_website_id`. Set your website ID from [Umami](https://umami.is) and the tracking script is added to every page automatically. Leave `params.umami_url` blank to use Umami Cloud (`https://cloud.umami.is/script.js`), or point it at your own self-hosted instance's `script.js`. With a website ID set, the theme also fires named [custom events](https://umami.is/docs/track-events) via `data-umami-event` attributes on: header/footer nav links, the light/dark toggle, the back-to-top button, pagination and post prev/next links, category links, photo grid tiles, in-post image lightbox links, the Bluesky reply link, and the 404 page's recovery link — so link and event breakdowns show up in Umami without any extra setup.
 
 ## Customizing colors
 

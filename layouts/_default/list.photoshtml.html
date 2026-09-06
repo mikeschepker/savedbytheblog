@@ -4,7 +4,7 @@
 	{{ if gt (len $list) 0 }}
 		<div class="photo-grid">
 			{{ range $index, $page := $list }}
-				<a class="photo-tile" href="{{ $page.Permalink }}">
+				<a class="photo-tile" href="{{ $page.Permalink }}" data-umami-event="Photo Click">
 					{{ range first 1 $page.Params.photos }}
 						<img src="{{ . }}" loading="lazy" alt="{{ $page.Title }}">
 					{{ end }}

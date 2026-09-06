@@ -26,6 +26,6 @@
 	{{ end }}
 {{ else }}
 	{{ if $blueskyHref }}
-		<p class="bluesky-reply"><a class="u-syndication" {{ printf "href=%q" $blueskyHref | safeHTMLAttr }}>Reply on Bluesky</a></p>
+		<p class="bluesky-reply"><a class="u-syndication" {{ printf "href=%q" $blueskyHref | safeHTMLAttr }} data-umami-event="Bluesky Reply">Reply on Bluesky</a></p>
 	{{ end }}
 {{ end }}

@@ -13,6 +13,7 @@
 	toggle();
 	btn.addEventListener('click', function () {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
+		if (window.umami) { umami.track('Back to Top'); }
 	});
 })();
 </script>

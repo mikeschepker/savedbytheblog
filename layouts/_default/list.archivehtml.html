@@ -6,7 +6,7 @@
 		{{ if gt (len $categories.Pages) 0 }}
 			<ul class="archive-categories">
 				{{ range $categories.Pages }}
-					<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+					<li><a href="{{ .Permalink }}" data-umami-event="Category Click" data-umami-event-category="{{ .Title }}">{{ .Title }}</a></li>
 				{{ end }}
 			</ul>
 		{{ end }}

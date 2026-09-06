@@ -1,1 +1,1 @@
-<a href="{{ .Destination | safeURL }}" class="post-image-link" target="_blank" rel="noopener noreferrer"><img src="{{ .Destination | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async"></a>
+<a href="{{ .Destination | safeURL }}" class="post-image-link" target="_blank" rel="noopener noreferrer" data-umami-event="Image Click"><img src="{{ .Destination | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async"></a>

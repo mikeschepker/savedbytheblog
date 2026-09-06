@@ -35,6 +35,18 @@
 			"field": "params.show_full_posts",
 			"label": "Show full posts on the home/archive/category lists, instead of just an excerpt",
 			"type": "boolean"
+		},
+		{
+			"field": "params.umami_website_id",
+			"label": "Umami website ID (analytics)",
+			"type": "string",
+			"placeholder": "e.g. 1a2b3c4d-5e6f-7g8h-9i0j-k1l2m3n4o5p6 from your Umami dashboard"
+		},
+		{
+			"field": "params.umami_url",
+			"label": "Umami script URL (leave blank to use Umami Cloud)",
+			"type": "string",
+			"placeholder": "e.g. https://umami.example.com/script.js"
 		}
 	]
 }

@@ -27,6 +27,10 @@
 
 	{{ partial "microblog_head.html" . }}
 
+	{{ with .Site.Params.umami_website_id }}
+		<script defer src="{{ or $.Site.Params.umami_url "https://cloud.umami.is/script.js" }}" data-website-id="{{ . }}"></script>
+	{{ end }}
+
 	{{ with .Site.Params.custom_head_html }}
 		{{ . | safeHTML }}
 	{{ end }}

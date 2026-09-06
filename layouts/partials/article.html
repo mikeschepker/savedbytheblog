@@ -47,7 +47,7 @@
 		{{ with .Params.categories }}
 			<span class="post-categories">
 				{{ range . }}
-					<a class="post-category" href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}">{{ . }}</a>
+					<a class="post-category" href="{{ $.Site.BaseURL }}categories/{{ . | urlize }}" data-umami-event="Category Click" data-umami-event-category="{{ . }}">{{ . }}</a>
 				{{ end }}
 			</span>
 		{{ end }}
@@ -67,13 +67,13 @@
 	{{ if or $prev $next }}
 		<nav class="post-nav" aria-label="Post navigation">
 			{{ if $prev }}
-				<a class="post-nav-link post-nav-prev" href="{{ $prev.RelPermalink }}" rel="prev">
+				<a class="post-nav-link post-nav-prev" href="{{ $prev.RelPermalink }}" rel="prev" data-umami-event="Post Navigation" data-umami-event-direction="Older">
 					<span class="post-nav-label">&larr; Older</span>
 					<span class="post-nav-title">{{ if $prev.Title }}{{ $prev.Title }}{{ else }}{{ $prev.Summary | plainify | truncate 40 }}{{ end }}</span>
 				</a>
 			{{ end }}
 			{{ if $next }}
-				<a class="post-nav-link post-nav-next" href="{{ $next.RelPermalink }}" rel="next">
+				<a class="post-nav-link post-nav-next" href="{{ $next.RelPermalink }}" rel="next" data-umami-event="Post Navigation" data-umami-event-direction="Newer">
 					<span class="post-nav-label">Newer &rarr;</span>
 					<span class="post-nav-title">{{ if $next.Title }}{{ $next.Title }}{{ else }}{{ $next.Summary | plainify | truncate 40 }}{{ end }}</span>
 				</a>
