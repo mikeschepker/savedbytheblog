@@ -107,6 +107,7 @@ img { max-width: 100%; height: auto; border-radius: 12px; border: var(--border-w
 
 .post-content iframe, .post-content video { max-width: 100%; border-radius: 12px; border: var(--border-width) solid var(--border); }
 .post-content video { height: auto; }
+.post-content { display: flow-root; }
 
 .post-content h1, .post-content h2, .post-content h3,
 .post-content h4, .post-content h5, .post-content h6 {
