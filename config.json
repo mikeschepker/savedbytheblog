@@ -88,7 +88,7 @@
 		}
 	},
 	"enableRobotsTXT": true,
-	"languageCode": "[LANGUAGE]",
+	"locale": "[LANGUAGE]",
 	"paginate": 10,
 	"params": {
 		"author": {
